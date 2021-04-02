@@ -1,0 +1,96 @@
+#dropzone {
+	background-color: #cfc;
+	border: solid 3px #9c9;
+	color: #9c9;
+	min-height: 50px;
+	padding: 20px;
+	text-shadow: 1px 1px 0 #fff;
+	&.dropover {
+		background-color: #cff;
+		color: #9cc;
+	}
+}
+
+#files:empty::before {
+	color: #ccc;
+	content: "(Files data will be shown here.)";
+}
+#files img {
+	border: solid 1px #ccc;
+	cursor: pointer;
+	height: auto;
+	margin: 0 10px;
+	max-height: 128px;
+	max-width: 128px;
+	width: auto;
+}
+
+#txtarea{
+		width: 90%;
+		height: 200px;
+		overflow: auto;
+		background: black;
+		color:white;
+		white-space: pre;
+		padding: 1em;
+}
+
+#links {
+	& > p {
+		font-weight: 400;
+	}
+}
+.item_category {
+	list-style: none;
+	& > li {
+		font-weight: 300;
+	}
+}
+.item_childs {
+	display: flex;
+	flex-wrap: wrap;
+	// justify-content:space-between;
+	justify-content:flex-start;
+	& > li {
+		list-style: none;
+		font-size: small;
+		margin-left: 2em;
+	}
+}
+
+
+// reference from https://webdesignday.jp/inspiration/technique/css/5316/
+.acd-check{
+  display: none;
+}
+#links {
+
+	.acd-label{
+		background: darkgreen;
+		color: #fff;
+		display: block;
+		margin-bottom: 1px;
+		padding: 3px;
+	
+	}
+	
+	.acd-content{
+		border: 1px solid #333;
+		height: 0;
+		opacity: 0;
+		padding: 0 10px;
+		transition: .5s;
+		visibility: hidden;
+	}
+	.acd-check:checked + .acd-label + .acd-content{
+		height: 40px;
+		opacity: 1;
+		padding: 10px;
+		visibility: visible;
+	}
+
+}	
+// style for page-top icon
+@import "modules/page-top";
+
+

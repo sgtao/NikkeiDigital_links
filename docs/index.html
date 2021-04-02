@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NikkeiDigital_links</title>
+  <link rel="stylesheet" href="styles/style.css">
+</head>
+<body>
+  <h1>NikkeiDigital_links</h1>
+  <div>日本経済新聞社『<a href="https://www.nikkei.com/nkd/" target="_blank">日経会社情報DIGITAL</a>』で公開されている東証上場会社の情報について、各企業のサイトリンクを示します。</div>
+  <div>（内容を参照する際は、<a href="https://www.nikkei.com/r123/" target="_blank">日経電子版(有償)</a>へご登録ください。）</div>
+  <hr>
+  <div id="links">
+    <p>リンク一覧：</p>
+  </div>
+  <hr>
+  <div>
+    このコンテンツは、『<a href="https://sgtao.github.io/csv2link_items/" target="_blank">csv2link</a>』のエンジンを使い下のテキストから生成しています。
+  </div>
+  <div id="txtarea"></div>
+  
+  <hr>
+  <!-- <table id="show_table"></table> -->
+  <script src="scripts/vendors/encoding.js"></script>
+  <script src="scripts/main.js"></script>
+  <script>
+    // use fetch to retrieve the products and pass them to init
+    // report any errors that occur in the fetch operation
+    // once the products have been successfully loaded and formatted as a JSON object
+    // using response.json(), run the initialize() function
+    let filename = "assets/tousyo_meigara_33gyoshu.csv";
+    fetch(filename).then(function(response) {
+      return response.text();
+    }).then(function(textContent) {
+      showText(elTxtArea, textContent);
+    }).catch(function(err) {
+      console.log('Fetch problem: ' + err.message);
+    });
+  </script>
+  <!-- scroll up button -->
+  <div id="page_top"><p>▲Top</p></div>      
+  <script src="./scripts/vendors/anime.min.js"></script>
+  <script src="scripts/libs/page-top.js"></script>
+  <script>
+    const btn_page_top = document.querySelector('#page_top');
+    init_page_top(btn_page_top);
+  </script>
+
+</body>
+</html>
