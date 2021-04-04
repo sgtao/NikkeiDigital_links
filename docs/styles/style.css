@@ -41,12 +41,15 @@
 
 .item_childs {
   display: flex;
+  flex-direction: row;
   flex-wrap: wrap;
-  justify-content: flex-start; }
+  justify-content: flex-start;
+  align-content: flex-start; }
   .item_childs > li {
     list-style: none;
     font-size: small;
-    margin-left: 2em; }
+    margin-left: 2em;
+    margin-bottom: 1em; }
 
 #links .acd-check {
   display: none; }
@@ -56,12 +59,14 @@
   display: block;
   margin-bottom: 1px;
   padding: 3px; }
+  #links .acd-label:hover {
+    cursor: pointer; }
 #links .acd-content {
   border: 1px solid #333;
   height: 0;
   opacity: 0;
   padding: 0 10px;
-  transition: 1.0s;
+  transition: .7s;
   visibility: hidden; }
 #links .acd-content.acd-open {
   height: 200px;

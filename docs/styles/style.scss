@@ -46,15 +46,18 @@
 		font-weight: 300;
 	}
 }
+// flexbox style refered from https://www.webcreatorbox.com/tech/css-flexbox-cheat-sheet
 .item_childs {
 	display: flex;
+	flex-direction: row;
 	flex-wrap: wrap;
-	// justify-content:space-between;
 	justify-content:flex-start;
+	align-content: flex-start;
 	& > li {
 		list-style: none;
 		font-size: small;
 		margin-left: 2em;
+		margin-bottom: 1em;
 	}
 }
 
@@ -70,14 +73,16 @@
 		display: block;
 		margin-bottom: 1px;
 		padding: 3px;
-	
+		&:hover {
+			cursor: pointer;
+		}
 	}
 	& .acd-content{
 		border: 1px solid #333;
 		height: 0;
 		opacity: 0;
 		padding: 0 10px;
-		transition: 1.0s;
+		transition: .7s;
 		visibility: hidden;
 	}
 	// & .acd-check:checked + .acd-label + .acd-content{
