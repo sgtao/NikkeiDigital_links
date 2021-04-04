@@ -137,9 +137,9 @@ function showAsLinks(eltarget, obArray) {
                 let _add_category = document.createElement('ul');
                 let _add_category_item = document.createElement('li');
                 let _add_category_child = document.createElement('ul');
-                _add_category_item.textContent = _cate;
+                _add_category_item.textContent = _cate + "（" + _find_arr.length + "社）";
                 _add_category_item.className = "item_category acd-label";
-                _add_category_child.className = "item_childs";
+                _add_category_child.className = "item_childs acd-content";
                 _add_category.appendChild(_add_category_item);
                 _add_category.appendChild(_add_category_child);
                 eltarget.appendChild(_add_category);
@@ -149,6 +149,10 @@ function showAsLinks(eltarget, obArray) {
                         // console.log("Object : ", _ob);
                         appendObject(_add_category_child, _ob);
                 }
+
+                _add_category_item.addEventListener('click', function toggle_openclose_child(e) {
+                        _add_category_child.classList.toggle('acd-open');
+                });
         });
 
         function _uniq(array) {

@@ -60,12 +60,11 @@
 
 
 // reference from https://webdesignday.jp/inspiration/technique/css/5316/
-.acd-check{
-  display: none;
-}
 #links {
-
-	.acd-label{
+	& .acd-check{
+		display: none;
+	}
+	& .acd-label{
 		background: darkgreen;
 		color: #fff;
 		display: block;
@@ -73,23 +72,26 @@
 		padding: 3px;
 	
 	}
-	
-	.acd-content{
+	& .acd-content{
 		border: 1px solid #333;
 		height: 0;
 		opacity: 0;
 		padding: 0 10px;
-		transition: .5s;
+		transition: 1.0s;
 		visibility: hidden;
 	}
-	.acd-check:checked + .acd-label + .acd-content{
-		height: 40px;
+	// & .acd-check:checked + .acd-label + .acd-content{
+	& .acd-content.acd-open {
+		// height: auto;
+		height: 200px;
 		opacity: 1;
 		padding: 10px;
 		visibility: visible;
+		overflow: scroll;
 	}
+}
 
-}	
+
 // style for page-top icon
 @import "modules/page-top";
 
