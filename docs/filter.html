@@ -17,8 +17,75 @@
         <li><a href="./filter.html"><img src="icons/outline_search_white_24dp.png" alt="">絞込み</a></li>
       </ul>
   </div>
-  <div id="container">
-    <h1>日経DIGITALリンク(絞込み)</h1>
-  </div>
+  <div id="container" class="filter">
+    <header>
+      <h1>日経DIGITALリンク(絞込み)</h1>
+    </header>
+    <div>
+      <aside>
+        <form>
+          <div>
+            <label for="category">Choose a category:</label>
+            <select id="category">
+              <option selected>All</option>
+              <option>0050_水産・農林業</option>
+              <option>1050_鉱業</option>
+              <option>2050_建設業</option>
+              <option>3050_食料品</option>
+              <option>3100_繊維製品</option>
+              <option>3150_パルプ・紙</option>
+              <option>3200_化学</option>
+              <option>3250_医薬品</option>
+              <option>3300_石油・石炭製品</option>
+              <option>3350_ゴム製品</option>
+              <option>3400_ガラス・土石製品</option>
+              <option>3450_鉄鋼</option>
+              <option>3500_非鉄金属</option>
+              <option>3550_金属製品</option>
+              <option>3600_機械</option>
+              <option>3650_電気機器</option>
+              <option>3700_輸送用機器</option>
+              <option>3750_精密機器</option>
+              <option>3800_その他製品</option>
+              <option>4050_電気・ガス業</option>
+              <option>5050_陸運業</option>
+              <option>5100_海運業</option>
+              <option>5150_空運業</option>
+              <option>5200_倉庫・運輸関連業</option>
+              <option>5250_情報・通信業</option>
+              <option>6050_卸売業</option>
+              <option>6100_小売業</option>
+              <option>7050_銀行業</option>
+              <option>7100_証券、商品先物取引業</option>
+              <option>7150_保険業</option>
+              <option>7200_その他金融業</option>
+              <option>8050_不動産業</option>
+              <option>9050_サービス業</option>
+              <option>9999_未定義</option>              
+            </select>
+          </div>
+          <div>
+            <label for="searchTerm">Enter search term:</label>
+            <input type="text" id="searchTerm" placeholder="e.g. サカタのタネ">
+          </div>
+          <div>
+            <button><img src="icons/outline_search_white_24dp.png"  alt="filter" width="24" height="24">Filter</button>
+          </div>
+        </form>
+      </aside>
+      <main>
+
+      </main>
+    </div>
+    <footer>
+      <p>このコンテンツは、<a href="https://mdn.github.io/learning-area/javascript/apis/fetching-data/can-store/" target="_blank" rel="noopener noreferrer">MDN learning-area,"The Can Store"</a>を参考に作成しました。</p>
+      <p>アイコンは、<a href="https://fonts.google.com/icons" target="_blank">Google Font</a>を利用してます。</p>
+  
+    </footer>
+
+  </div>  
+  
+
+
 </body>
 </html>
