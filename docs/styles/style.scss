@@ -1,7 +1,19 @@
+@import "mixin";
+// style for page-top icon
+@import "modules/page-top";
+// style for side-menu
+@import "modules/_side-menu.scss";
+
+html, body {
+	margin:0 auto;
+	height: 100vh;
+}
 #container {
 	margin: 0 auto;
 	width: 80%;
 }
+
+// index.html styles
 #dropzone {
 	background-color: #cfc;
 	border: solid 3px #9c9;
@@ -101,9 +113,5 @@
 		overflow: scroll;
 	}
 }
-
-
-// style for page-top icon
-@import "modules/page-top";
 
 

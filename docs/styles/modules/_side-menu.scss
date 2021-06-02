@@ -1,0 +1,54 @@
+
+.menu {
+  font-weight: 100;
+  background: #555;
+  width: 150px;
+  height: 100%;
+  padding-left: 50px;
+  position: fixed;
+  z-index: 5;
+  -webkit-box-shadow: -3px 0px 5px 0px rgba(0,0,0,0.2);
+  box-shadow: -3px 0px 5px 0px rgba(0,0,0,0.2);
+  right: -130px;
+  @include all-transition(0.3s);
+  color: #eee;
+
+  &:hover, &:focus
+  {
+    transform: translate3d(-130px, 0, 0);
+    animation-timing-function: 1s ease-in;
+  }
+  .title
+  {
+    top:0%;
+    @include vertical-align(absolute);
+    left: 10px;
+    font-weight: 800;
+    font-size: 15px;
+
+  }
+  .nav
+  {
+    @include vertical-align(absolute);
+    font-weight: 100;
+
+    li
+    {
+        padding-bottom: 30px;
+        list-style-type: none;
+
+        a
+        {
+          display: block;
+          text-decoration: none;
+          color: inherit;
+          @include all-transition(0.3s);
+
+          &:hover
+          {
+            color: #aaa;
+          }
+        }
+    }
+  }
+}

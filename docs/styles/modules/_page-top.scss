@@ -11,6 +11,9 @@
   display: block;
   z-index: 10;
   opacity: 0;
+  :hover {
+    cursor: pointer;
+  }
 }
 #page_top p{
   position: relative;
