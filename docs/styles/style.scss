@@ -1,3 +1,7 @@
+#container {
+	margin: 0 auto;
+	width: 80%;
+}
 #dropzone {
 	background-color: #cfc;
 	border: solid 3px #9c9;
@@ -68,12 +72,14 @@
 		display: none;
 	}
 	& .acd-label{
-		background: darkgreen;
+		background: rgb(1, 182, 1);
 		color: #fff;
 		display: block;
 		margin-bottom: 1px;
 		padding: 3px;
 		&:hover {
+			background: darkgreen;
+			font-weight: bold;
 			cursor: pointer;
 		}
 	}

@@ -1,17 +1,26 @@
+#container {
+  margin: 0 auto;
+  width: 80%;
+}
+
 #dropzone {
   background-color: #cfc;
   border: solid 3px #9c9;
   color: #9c9;
   min-height: 50px;
   padding: 20px;
-  text-shadow: 1px 1px 0 #fff; }
-  #dropzone.dropover {
-    background-color: #cff;
-    color: #9cc; }
+  text-shadow: 1px 1px 0 #fff;
+}
+
+#dropzone.dropover {
+  background-color: #cff;
+  color: #9cc;
+}
 
 #files:empty::before {
   color: #ccc;
-  content: "(Files data will be shown here.)"; }
+  content: "(Files data will be shown here.)";
+}
 
 #files img {
   border: solid 1px #ccc;
@@ -20,7 +29,8 @@
   margin: 0 10px;
   max-height: 128px;
   max-width: 128px;
-  width: auto; }
+  width: auto;
+}
 
 #txtarea {
   width: 90%;
@@ -29,51 +39,80 @@
   background: black;
   color: white;
   white-space: pre;
-  padding: 1em; }
+  padding: 1em;
+}
 
 #links > p {
-  font-weight: 400; }
+  font-weight: 400;
+}
 
 .item_category {
-  list-style: none; }
-  .item_category > li {
-    font-weight: 300; }
+  list-style: none;
+}
+
+.item_category > li {
+  font-weight: 300;
+}
 
 .item_childs {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: flex-start;
-  align-content: flex-start; }
-  .item_childs > li {
-    list-style: none;
-    font-size: small;
-    margin-left: 2em;
-    margin-bottom: 1em; }
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -ms-flex-line-pack: start;
+      align-content: flex-start;
+}
+
+.item_childs > li {
+  list-style: none;
+  font-size: small;
+  margin-left: 2em;
+  margin-bottom: 1em;
+}
 
 #links .acd-check {
-  display: none; }
+  display: none;
+}
+
 #links .acd-label {
-  background: darkgreen;
+  background: #01b601;
   color: #fff;
   display: block;
   margin-bottom: 1px;
-  padding: 3px; }
-  #links .acd-label:hover {
-    cursor: pointer; }
+  padding: 3px;
+}
+
+#links .acd-label:hover {
+  background: darkgreen;
+  font-weight: bold;
+  cursor: pointer;
+}
+
 #links .acd-content {
   border: 1px solid #333;
   height: 0;
   opacity: 0;
   padding: 0 10px;
+  -webkit-transition: .7s;
   transition: .7s;
-  visibility: hidden; }
+  visibility: hidden;
+}
+
 #links .acd-content.acd-open {
   height: 200px;
   opacity: 1;
   padding: 10px;
   visibility: visible;
-  overflow: scroll; }
+  overflow: scroll;
+}
 
 /* pagetop_styles.css */
 /* refer : https://rfs.jp/sb/javascript/js-lab/brn-backtotop.html */
@@ -87,7 +126,8 @@
   border-radius: 50%;
   display: block;
   z-index: 10;
-  opacity: 0; }
+  opacity: 0;
+}
 
 #page_top p {
   position: relative;
@@ -98,17 +138,24 @@
   color: white;
   top: 10px;
   /* text-align: center; */
-  margin-block-start: 1em;
-  margin-block-end: 1em;
-  margin-inline-start: 0px;
-  margin-inline-end: 0px;
-  line-height: 0; }
+  -webkit-margin-before: 1em;
+          margin-block-start: 1em;
+  -webkit-margin-after: 1em;
+          margin-block-end: 1em;
+  -webkit-margin-start: 0px;
+          margin-inline-start: 0px;
+  -webkit-margin-end: 0px;
+          margin-inline-end: 0px;
+  line-height: 0;
+}
 
 #page_top.fadein {
   opacity: 0.6;
-  transition: all .5s; }
+  -webkit-transition: all .5s;
+  transition: all .5s;
+}
 
 #page_top.fadein:hover {
-  opacity: 0.9; }
-
+  opacity: 0.9;
+}
 /*# sourceMappingURL=style.css.map */
