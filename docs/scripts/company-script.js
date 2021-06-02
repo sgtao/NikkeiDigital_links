@@ -156,6 +156,28 @@ function initialize(companys) {
 
     // Give the <p> textContent equal to the company "category"
     para.textContent = company.category;
+    // append supplements of paragraph
+    const para_suppliments = document.createElement('div');
+    // -- need for refactering
+    const para_company = document.createElement('a');
+    para_company.textContent = "会社概要";
+    para_company.href = company.company;
+    para_company.target = "_blank";
+    //
+    const para_kessan  = document.createElement('a');
+    para_kessan.textContent = "業績財務";
+    para_kessan.href = company.kessan;
+    para_kessan.target = "_blank";
+    //
+    const para_siteana = document.createElement('a');
+    para_siteana.textContent = "HP分析";
+    para_siteana.href = company.siiteanalitics;
+    para_siteana.target = "_blank";
+
+    para_suppliments.setAttribute('class','suppliments');
+    para_suppliments.appendChild(para_company);
+    para_suppliments.appendChild(para_kessan);
+    para_suppliments.appendChild(para_siteana);
 
     // // Set the src of the <img> element to the ObjectURL, and the alt to the company "name" property
     // image.src = objectURL;
@@ -165,6 +187,6 @@ function initialize(companys) {
     main.appendChild(section);
     section.appendChild(heading);
     section.appendChild(para);
-    // section.appendChild(image);
+    section.appendChild(para_suppliments);
   }
 }

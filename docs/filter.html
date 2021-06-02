@@ -89,7 +89,7 @@
     // report any errors that occur in the fetch operation
     // once the products have been successfully loaded and formatted as a JSON object
     // using response.json(), run the initialize() function
-    fetch('./assets/nikkei_digital_url.json').then(function (response) {
+    fetch('./assets/nikkei_filter.json').then(function (response) {
       return response.json();
     }).then(function (json) {
       let companies = json;

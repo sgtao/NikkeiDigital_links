@@ -172,6 +172,15 @@ html, body {
 			&:hover {
 				background-color: orange;
 			}
+			.suppliments {
+				display: flex;
+				flex-wrap: wrap;
+				justify-content: space-between;
+				font-size: small;
+				a {
+					margin: 5px;
+				}
+			}
 		}
 	}
 	/* Styling footer */
