@@ -24,7 +24,7 @@
     <div>
       <aside>
         <form>
-          <div>
+          <div class="category">
             <label for="category">Choose a category:</label>
             <select id="category">
               <option selected>All</option>
@@ -64,7 +64,7 @@
               <option>9999_未定義</option>              
             </select>
           </div>
-          <div>
+          <div class="textsearch">
             <label for="searchTerm">Enter search term:</label>
             <input type="text" id="searchTerm" placeholder="e.g. サカタのタネ">
           </div>
@@ -80,12 +80,26 @@
     <footer>
       <p>このコンテンツは、<a href="https://mdn.github.io/learning-area/javascript/apis/fetching-data/can-store/" target="_blank" rel="noopener noreferrer">MDN learning-area,"The Can Store"</a>を参考に作成しました。</p>
       <p>アイコンは、<a href="https://fonts.google.com/icons" target="_blank">Google Font</a>を利用してます。</p>
-  
     </footer>
 
   </div>  
-  
-
+  <script src="scripts/company-script.js"></script>
+  <script>
+    // use fetch to retrieve the companies and pass them to init
+    // report any errors that occur in the fetch operation
+    // once the products have been successfully loaded and formatted as a JSON object
+    // using response.json(), run the initialize() function
+    fetch('./assets/nikkei_digital_url.json').then(function (response) {
+      return response.json();
+    }).then(function (json) {
+      let companies = json;
+      console.log(`json content :`);
+      console.log(companies);
+      initialize(companies);
+    }).catch(function (err) {
+      console.log('Fetch problem: ' + err.message);
+    });
+  </script>
 
 </body>
 </html>

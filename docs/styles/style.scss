@@ -139,7 +139,7 @@ html, body {
   }
 	input {
 		background: white;
-		color: yellow;
+		color: black;
 		border: 1px solid black;
 		padding: 5px;
     width: calc(100% - 5px);
@@ -157,6 +157,14 @@ html, body {
 		flex-flow: row wrap;
 		justify-content: space-around;
 		grid-row: 2;
+
+		section {
+			border: 1px solid black;
+			border-radius: 5px;
+			margin: 5px;
+			padding: 0 10px;
+			background-color:rgb(173, 253, 253);
+		}
 	}
 	/* Styling footer */
 	footer {

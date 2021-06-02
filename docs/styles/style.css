@@ -260,7 +260,7 @@ html, body {
 
 .filter input {
   background: white;
-  color: yellow;
+  color: black;
   border: 1px solid black;
   padding: 5px;
   width: calc(100% - 5px);
@@ -286,6 +286,14 @@ html, body {
       justify-content: space-around;
   -ms-grid-row: 2;
   grid-row: 2;
+}
+
+.filter main section {
+  border: 1px solid black;
+  border-radius: 5px;
+  margin: 5px;
+  padding: 0 10px;
+  background-color: #adfdfd;
 }
 
 .filter footer {
