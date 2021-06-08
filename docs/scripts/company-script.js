@@ -162,17 +162,23 @@ function initialize(companys) {
     const para_suppliments = document.createElement('div');
     // -- need for refactering
     const para_company = document.createElement('a');
-    para_company.textContent = "会社概要";
+    para_company.textContent = "概要";
     para_company.href = "https://www.nikkei.com/nkd/company/gaiyo/?scode=" + company.code;
     para_company.target = "_blank";
     //
     const para_kessan  = document.createElement('a');
-    para_kessan.textContent = "業績財務";
+    para_kessan.textContent = "業績";
     para_kessan.href = "https://www.nikkei.com/nkd/company/kessan/?scode=" + company.code;
     para_kessan.target = "_blank";  
-    // append links to nikkei contents 
+    // append news contents
+    const para_news = document.createElement('a');
+    para_news.textContent = "news";
+    para_news.href = "https://www.nikkei.com/nkd/company/news/?scode=" + company.code;
+    para_news.target = "_blank";
+    // append links to nikkei contents
     para_suppliments.setAttribute('class','suppliments');
     para_suppliments.appendChild(para_company);
+    para_suppliments.appendChild(para_news);
     para_suppliments.appendChild(para_kessan);
     // append website analysis contents
     if (company.company_url !== '--') {
