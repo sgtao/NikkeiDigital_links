@@ -140,7 +140,8 @@ function initialize(companys) {
     // create <section>, <h2>, <p>, and <img> elements
     const section = document.createElement('section');
     const heading = document.createElement('h2');
-    const para = document.createElement('p');
+    const para_cate = document.createElement('p');
+    const para_pref = document.createElement('p');
     const link = document.createElement('a');
     // const image = document.createElement('img');
 
@@ -150,34 +151,37 @@ function initialize(companys) {
     // Give the <h2> textContent equal to the company "name" property, but with the first character
     // replaced with the uppercase version of the first character
     link.textContent = company.name.replace(company.name.charAt(0), company.name.charAt(0).toUpperCase());
-    link.href = company.url;
+    link.href = (company.company_url !== '--') ? company.company_url : "#";
     link.target = "_blank";
     heading.appendChild(link);
 
     // Give the <p> textContent equal to the company "category"
-    para.textContent = company.category;
+    para_cate.textContent = company.category;
+    para_pref.textContent = '本社：' + company.head_prefecture;
     // append supplements of paragraph
     const para_suppliments = document.createElement('div');
     // -- need for refactering
     const para_company = document.createElement('a');
     para_company.textContent = "会社概要";
-    para_company.href = company.company;
+    para_company.href = "https://www.nikkei.com/nkd/company/gaiyo/?scode=" + company.code;
     para_company.target = "_blank";
     //
     const para_kessan  = document.createElement('a');
     para_kessan.textContent = "業績財務";
-    para_kessan.href = company.kessan;
-    para_kessan.target = "_blank";
-    //
-    const para_siteana = document.createElement('a');
-    para_siteana.textContent = "HP分析";
-    para_siteana.href = company.siiteanalitics;
-    para_siteana.target = "_blank";
-
+    para_kessan.href = "https://www.nikkei.com/nkd/company/kessan/?scode=" + company.code;
+    para_kessan.target = "_blank";  
+    // append links to nikkei contents 
     para_suppliments.setAttribute('class','suppliments');
     para_suppliments.appendChild(para_company);
     para_suppliments.appendChild(para_kessan);
-    para_suppliments.appendChild(para_siteana);
+    // append website analysis contents
+    if (company.company_url !== '--') {
+      const para_siteana = document.createElement('a');
+      para_siteana.textContent = "HP分析";
+      para_siteana.href = (company.company_url !== '--') ? "https://omotenashi.site/company/" + company.code : "#";
+      para_siteana.target = "_blank";
+      para_suppliments.appendChild(para_siteana);
+    }
 
     // // Set the src of the <img> element to the ObjectURL, and the alt to the company "name" property
     // image.src = objectURL;
@@ -186,7 +190,8 @@ function initialize(companys) {
     // append the elements to the DOM as appropriate, to add the company to the UI
     main.appendChild(section);
     section.appendChild(heading);
-    section.appendChild(para);
+    section.appendChild(para_cate);
+    section.appendChild(para_pref);
     section.appendChild(para_suppliments);
   }
 }
