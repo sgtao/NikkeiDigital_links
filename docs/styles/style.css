@@ -190,8 +190,6 @@ html, body {
     grid-row: 1;
     padding: 10px;
     background: lightgreen; }
-    .filter aside .category {
-      display: none; }
   .filter input {
     background: white;
     color: black;

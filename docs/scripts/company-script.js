@@ -62,12 +62,14 @@ function initialize(companys) {
       } else {
         // the values in the <option> elements are uppercase, whereas the categories
         // store in the JSON (under "type") are lowercase. We therefore need to convert
-        // to lower case before we do a comparison
-        let lowerCaseType = category.value.toLowerCase();
+        // // to lower case before we do a comparison
+        // let lowerCaseType = category.value.toLowerCase();
+        // filter by category 
+        let category_value = category.value;
         for (let i = 0; i < companys.length; i++) {
           // If a company's type property is the same as the chosen category, we want to
           // display it, so we push it onto the categoryGroup array
-          if (companys[i].type === lowerCaseType) {
+          if (companys[i].category_with_code === category_value) {
             categoryGroup.push(companys[i]);
           }
         }
