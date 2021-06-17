@@ -45,7 +45,7 @@ function initialize(companys) {
     // if the category and search term are the same as they were the last time a
     // search was run, the results will be the same, so there is no point running
     // it again — just return out of the function
-    if (category.value === lastCategory && searchTerm.value.trim() === lastSearch) {
+  if (category.value === lastCategory && searchTerm.value.trim() === lastSearch) {
       return;
     } else {
       // update the record of last category and search term
