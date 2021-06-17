@@ -13,39 +13,38 @@
   @include all-transition(0.3s);
   color: #eee;
 
-  &:hover, &:focus
-  {
+  &:hover, &:focus {
     transform: translate3d(-130px, 0, 0);
     animation-timing-function: 1s ease-in;
+    .title {
+      transform: translate3d(0, 0, 0);
+    }
   }
-  .title
-  {
+  .title {
     top:0%;
     @include vertical-align(absolute);
     left: 10px;
     font-weight: 800;
     font-size: 15px;
-
+    transform: translate3d(-10px, 0, 0);
   }
-  .nav
-  {
+  .nav {
     @include vertical-align(absolute);
     font-weight: 100;
-
-    li
-    {
+    .nav_title {
+      font-weight: 600;
+    }
+    li {
         padding-bottom: 30px;
         list-style-type: none;
-
-        a
-        {
+        a {
           display: block;
           text-decoration: none;
           color: inherit;
           @include all-transition(0.3s);
-
-          &:hover
-          {
+          border-bottom: solid 1px white;
+          &:hover {
+            font-size: larger;
             color: #aaa;
           }
         }
