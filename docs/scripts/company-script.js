@@ -24,6 +24,7 @@ function initialize(companys) {
   // then run updateDisplay(), so ALL companys are displayed initially.
   finalGroup = companys;
   updateDisplay();
+  // selectCategory();
 
   // Set both to equal an empty array, in time for searches to be run
   categoryGroup = [];
@@ -45,7 +46,7 @@ function initialize(companys) {
     // if the category and search term are the same as they were the last time a
     // search was run, the results will be the same, so there is no point running
     // it again — just return out of the function
-  if (category.value === lastCategory && searchTerm.value.trim() === lastSearch) {
+    if (category.value === lastCategory && searchTerm.value.trim() === lastSearch) {
       return;
     } else {
       // update the record of last category and search term
@@ -168,17 +169,17 @@ function initialize(companys) {
     para_company.href = "https://www.nikkei.com/nkd/company/gaiyo/?scode=" + company.code;
     para_company.target = "_blank";
     //
-    const para_kessan  = document.createElement('a');
+    const para_kessan = document.createElement('a');
     para_kessan.textContent = "業績";
     para_kessan.href = "https://www.nikkei.com/nkd/company/kessan/?scode=" + company.code;
-    para_kessan.target = "_blank";  
+    para_kessan.target = "_blank";
     // append news contents
     const para_news = document.createElement('a');
     para_news.textContent = "news";
     para_news.href = "https://www.nikkei.com/nkd/company/news/?scode=" + company.code;
     para_news.target = "_blank";
     // append links to nikkei contents
-    para_suppliments.setAttribute('class','suppliments');
+    para_suppliments.setAttribute('class', 'suppliments');
     para_suppliments.appendChild(para_company);
     para_suppliments.appendChild(para_news);
     para_suppliments.appendChild(para_kessan);

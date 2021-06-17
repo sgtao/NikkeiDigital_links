@@ -22,7 +22,7 @@
     <header>
       <h1>日経DIGITALリンク(絞込み)</h1>
       <p>東証上場企業について、各企業の<a href="https://www.nikkei.com/nkd/" target="_blank" rel="noopener noreferrer">日経会社情報DIGITAL</a>と<a href="https://omotenashi.site/" target="_blank" rel="noopener noreferrer">おもてなしサイト</a>のリンクをご紹介します。</p>
-      <p style="color:red" style="font-weight:bold">（企業名で絞込み(Filter)をかけて、ご参照ください）</p>
+      <p style="color:red" style="font-weight:bold">（category／企業名で絞込み(Filter)をかけて、ご参照ください）</p>
     </header>
     <div>
       <aside>
@@ -96,8 +96,8 @@
       return response.json();
     }).then(function (json) {
       let companies = json;
-      console.log(`json content :`);
-      console.log(companies);
+      // console.log(`json content :`);
+      // console.log(companies);
       initialize(companies);
     }).catch(function (err) {
       console.log('Fetch problem: ' + err.message);
