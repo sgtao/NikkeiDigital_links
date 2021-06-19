@@ -20,19 +20,27 @@ function initialize(companys) {
   let categoryGroup;
   let finalGroup;
 
-  // To start with, set finalGroup to equal the entire companys database
-  // then run updateDisplay(), so ALL companys are displayed initially.
-  finalGroup = companys;
-  updateDisplay();
-  // selectCategory();
-
   // Set both to equal an empty array, in time for searches to be run
   categoryGroup = [];
   finalGroup = [];
+  
+  // To start with, set finalGroup to equal the entire companys database
+  // then run updateDisplay(), so ALL companys are displayed initially.
+  finalGroup = companys;
+  // updateDisplay();
+  // filter companies by category at initial
+  filter_category(category.value);
+  // Run selectcompanys() after the filtering has been done
+  selectcompanys();
 
+
+  // 
+  // selectcompanys();
+  
   // when the search button is clicked, invoke selectCategory() to start
   // a search running to select the category of companys we want to display
-  searchBtn.onclick = selectCategory;
+  // searchBtn.onclick = selectCategory;
+  searchBtn.addEventListener('click', selectCategory);
 
   function selectCategory(e) {
     // Use preventDefault() to stop the form submitting — that would ruin
@@ -49,6 +57,7 @@ function initialize(companys) {
     if (category.value === lastCategory && searchTerm.value.trim() === lastSearch) {
       return;
     } else {
+      console.log('change category');
       // update the record of last category and search term
       lastCategory = category.value;
       lastSearch = searchTerm.value.trim();
@@ -65,22 +74,28 @@ function initialize(companys) {
         // store in the JSON (under "type") are lowercase. We therefore need to convert
         // // to lower case before we do a comparison
         // let lowerCaseType = category.value.toLowerCase();
-        // filter by category 
-        let category_value = category.value;
-        for (let i = 0; i < companys.length; i++) {
-          // If a company's type property is the same as the chosen category, we want to
-          // display it, so we push it onto the categoryGroup array
-          if (companys[i].category_with_code === category_value) {
-            categoryGroup.push(companys[i]);
-          }
-        }
-
+        filter_category(category.value);
         // Run selectcompanys() after the filtering has been done
         selectcompanys();
       }
     }
   }
 
+  function filter_category(category_name) {
+    // filter by category 
+    let category_value = category_name;
+    if (category.value === 'All') {
+        categoryGroup = companys;
+    } else {
+      for (let i = 0; i < companys.length; i++) {
+        // If a company's type property is the same as the chosen category, we want to
+        // display it, so we push it onto the categoryGroup array
+        if (companys[i].category_with_code === category_value) {
+          categoryGroup.push(companys[i]);
+        }
+      }
+    }
+  }
   // selectcompanys() Takes the group of companys selected by selectCategory(), and further
   // filters them by the tiered search term (if one has been entered)
   function selectcompanys() {
@@ -134,7 +149,7 @@ function initialize(companys) {
   function fetchBlob(company) {
     // construct the URL path to the image file from the company.image property
     let url = company.url;
-    console.log(company);
+    // console.log(company);
     showcompany(url, company);
   }
 

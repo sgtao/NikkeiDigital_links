@@ -16,9 +16,6 @@
   &:hover, &:focus {
     transform: translate3d(-130px, 0, 0);
     animation-timing-function: 1s ease-in;
-    .title {
-      transform: translate3d(0, 0, 0);
-    }
   }
   .title {
     top:0%;
@@ -27,6 +24,9 @@
     font-weight: 800;
     font-size: 15px;
     transform: translate3d(-10px, 0, 0);
+    img {
+      transform: translateY(90deg);
+    }
   }
   .nav {
     @include vertical-align(absolute);
