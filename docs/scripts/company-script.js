@@ -174,8 +174,10 @@ function initialize(companys) {
     heading.appendChild(link);
 
     // Give the <p> textContent equal to the company "category"
-    para_cate.textContent = company.category;
+    para_cate.textContent = company.tosyo_category + '：' + company.category;
+    para_cate.setAttribute('class', 'category');
     para_pref.textContent = '本社：' + company.head_prefecture;
+    para_pref.setAttribute('class', 'prefecture');
     // append supplements of paragraph
     const para_suppliments = document.createElement('div');
     // -- need for refactering

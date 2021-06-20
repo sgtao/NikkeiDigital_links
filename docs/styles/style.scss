@@ -172,7 +172,7 @@ html, body {
 			&:hover {
 				background-color: orange;
 			}
-			.suppliments {
+			.category, .prefecture, .suppliments {
 				display: flex;
 				flex-wrap: wrap;
 				justify-content: space-between;

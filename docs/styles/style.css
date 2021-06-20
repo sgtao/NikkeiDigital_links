@@ -65,7 +65,7 @@
     font-size: 15px;
     transform: translate3d(-10px, 0, 0); }
     .menu .title img {
-      transform: translateY(90deg); }
+      transform: rotate(90deg); }
   .menu .nav {
     position: absolute;
     top: 50%;
@@ -222,12 +222,12 @@ html, body {
       background-color: #ffe3ac; }
       .filter main section:hover {
         background-color: orange; }
-      .filter main section .suppliments {
+      .filter main section .category, .filter main section .prefecture, .filter main section .suppliments {
         display: flex;
         flex-wrap: wrap;
         justify-content: space-between;
         font-size: small; }
-        .filter main section .suppliments a {
+        .filter main section .category a, .filter main section .prefecture a, .filter main section .suppliments a {
           margin: 5px; }
   .filter footer {
     grid-row: 3;
