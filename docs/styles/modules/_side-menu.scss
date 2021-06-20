@@ -16,6 +16,10 @@
   &:hover, &:focus {
     transform: translate3d(-130px, 0, 0);
     animation-timing-function: 1s ease-in;
+    .title > img {
+      transform: rotate(0deg);
+      transition: all 0.5s 0s ease;/*transitionの記述を追加*/
+    }
   }
   .title {
     top:0%;
@@ -25,7 +29,7 @@
     font-size: 15px;
     transform: translate3d(-10px, 0, 0);
     img {
-      transform: rotate(90deg);
+      transform: rotate(-90deg);
     }
   }
   .nav {

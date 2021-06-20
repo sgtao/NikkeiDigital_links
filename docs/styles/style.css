@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /* pagetop_styles.css */
 /* refer : https://rfs.jp/sb/javascript/js-lab/brn-backtotop.html */
 #page_top {
@@ -53,6 +54,10 @@
   .menu:hover, .menu:focus {
     transform: translate3d(-130px, 0, 0);
     animation-timing-function: 1s ease-in; }
+    .menu:hover .title > img, .menu:focus .title > img {
+      transform: rotate(0deg);
+      transition: all 0.5s 0s ease;
+      /*transitionの記述を追加*/ }
   .menu .title {
     top: 0%;
     position: absolute;
@@ -65,7 +70,7 @@
     font-size: 15px;
     transform: translate3d(-10px, 0, 0); }
     .menu .title img {
-      transform: rotate(90deg); }
+      transform: rotate(-90deg); }
   .menu .nav {
     position: absolute;
     top: 50%;
