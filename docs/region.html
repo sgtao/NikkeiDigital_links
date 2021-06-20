@@ -94,10 +94,7 @@
     // using response.json(), run the initialize() function
     fetch('./assets/NikkeiDIGITAL_list.json').then(function (response) {
       return response.json();
-    }).then(function (json) {
-      let companies = json;
-      console.log(`json content :`);
-      console.log(companies);
+    }).then(function (companies) {
       initialize(companies);
     }).catch(function (err) {
       console.log('Fetch problem: ' + err.message);

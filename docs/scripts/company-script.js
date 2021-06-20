@@ -232,7 +232,7 @@ function initialize(companys) {
 
   function set_prefecture () {
     // let area_category = [{ name : null , active : false }];
-    let area_category = new Array();
+    let area_category = new Array({ name: '--', activity: true });
     area_category.push({ name: '北海道', activity : true});
     area_category.push({ name: '青森県', activity: true });
     area_category.push({ name: '岩手県', activity: true });
