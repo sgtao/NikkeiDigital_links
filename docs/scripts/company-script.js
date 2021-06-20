@@ -23,7 +23,10 @@ function initialize(companys) {
   // Set both to equal an empty array, in time for searches to be run
   categoryGroup = [];
   finalGroup = [];
-  
+
+  // set prefecture category
+  let pref_category = set_prefecture();
+
   // To start with, set finalGroup to equal the entire companys database
   // then run updateDisplay(), so ALL companys are displayed initially.
   finalGroup = companys;
@@ -155,6 +158,12 @@ function initialize(companys) {
 
   // Display a company inside the <main> element
   function showcompany(url, company) {
+    // check pref. category 
+    let _prefecture = pref_category.filter(pref => pref.name == company.head_prefecture)
+    if (_prefecture[0].activity === false) {
+      return;
+    }
+
     // create <section>, <h2>, <p>, and <img> elements
     const section = document.createElement('section');
     const heading = document.createElement('h2');
@@ -219,5 +228,59 @@ function initialize(companys) {
     section.appendChild(para_cate);
     section.appendChild(para_pref);
     section.appendChild(para_suppliments);
+  }
+
+  function set_prefecture () {
+    // let area_category = [{ name : null , active : false }];
+    let area_category = new Array();
+    area_category.push({ name: '北海道', activity : true});
+    area_category.push({ name: '青森県', activity: true });
+    area_category.push({ name: '岩手県', activity: true });
+    area_category.push({ name: '宮城県', activity: true });
+    area_category.push({ name: '秋田県', activity: true });
+    area_category.push({ name: '山形県', activity: true });
+    area_category.push({ name: '福島県', activity: true });
+    area_category.push({ name: '茨城県', activity: true });
+    area_category.push({ name: '栃木県', activity: true });
+    area_category.push({ name: '群馬県', activity: true });
+    area_category.push({ name: '埼玉県', activity: true });
+    area_category.push({ name: '千葉県', activity: true });
+    area_category.push({ name: '東京都', activity: true });
+    area_category.push({ name: '神奈川県', activity: true });
+    area_category.push({ name: '新潟県', activity: true });
+    area_category.push({ name: '富山県', activity: true });
+    area_category.push({ name: '石川県', activity: true });
+    area_category.push({ name: '福井県', activity: true });
+    area_category.push({ name: '山梨県', activity: true });
+    area_category.push({ name: '長野県', activity: true });
+    area_category.push({ name: '岐阜県', activity: true });
+    area_category.push({ name: '静岡県', activity: true });
+    area_category.push({ name: '愛知県', activity: true });
+    area_category.push({ name: '三重県', activity: true });
+    area_category.push({ name: '滋賀県', activity: true });
+    area_category.push({ name: '京都府', activity: true });
+    area_category.push({ name: '大阪府', activity: true });
+    area_category.push({ name: '兵庫県', activity: true });
+    area_category.push({ name: '奈良県', activity: true });
+    area_category.push({ name: '和歌山県', activity: true });
+    area_category.push({ name: '鳥取県', activity: true });
+    area_category.push({ name: '島根県', activity: true });
+    area_category.push({ name: '岡山県', activity: true });
+    area_category.push({ name: '広島県', activity: true });
+    area_category.push({ name: '山口県', activity: true });
+    area_category.push({ name: '徳島県', activity: true });
+    area_category.push({ name: '香川県', activity: true });
+    area_category.push({ name: '愛媛県', activity: true });
+    area_category.push({ name: '高知県', activity: true });
+    area_category.push({ name: '福岡県', activity: true });
+    area_category.push({ name: '佐賀県', activity: true });
+    area_category.push({ name: '長崎県', activity: true });
+    area_category.push({ name: '熊本県', activity: true });
+    area_category.push({ name: '大分県', activity: true });
+    area_category.push({ name: '宮崎県', activity: true });
+    area_category.push({ name: '鹿児島県', activity: true });
+    area_category.push({ name: '沖縄県', activity: true });
+    console.log(area_category);
+    return area_category;
   }
 }
