@@ -1,113 +1,222 @@
 <!DOCTYPE html>
 <html lang="ja">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>NikkeiDigital_links(filter)</title>
-  <link rel="stylesheet" href="styles/vendors/bootstrap-reboot.css">
-  <link rel="stylesheet" href="styles/style.css">
-</head>
-<body>
-  <div class="menu">
-      <div class="title"><img src="icons/outline_menu_white_24dp.png" alt=""></div>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>NikkeiDigital_links(filter)</title>
+    <link rel="stylesheet" href="styles/vendors/bootstrap-reboot.css" />
+    <link rel="stylesheet" href="styles/style.css" />
+  </head>
+  <body>
+    <div class="menu">
+      <div class="title">
+        <img src="icons/outline_menu_white_24dp.png" alt="" />
+      </div>
       <ul class="nav">
         <li class="nav_title">MENU</li>
-        <li><a href="./index.html"><img src="icons/outline_home_white_24dp.png" alt="">Home</a></li>
-        <li><a href="./region.html"><img src="icons/map-japan-icon.png" alt="">地域別</a></li>
-        <li><a href="./filter.html"><img src="icons/outline_search_white_24dp.png" alt="">絞込み</a></li>
+        <li>
+          <a href="./index.html"
+            ><img src="icons/outline_home_white_24dp.png" alt="" />Home</a
+          >
+        </li>
+        <li>
+          <a href="./region.html"
+            ><img src="icons/map-japan-icon.png" alt="" />地域別</a
+          >
+        </li>
+        <li>
+          <a href="./filter.html"
+            ><img src="icons/outline_search_white_24dp.png" alt="" />絞込み</a
+          >
+        </li>
       </ul>
-  </div>
-  <div id="container" class="filter">
-    <header>
-      <h1>日経DIGITALリンク(地域別)</h1>
-      <p>作成中です。</p>
-      <p style="color:red" style="font-weight:bold">（企業名で絞込み(Filter)をかけて、ご参照ください）</p>
-    </header>
-    <div>
-      <aside>
-        <form>
-          <div class="category">
-            <label for="category">Choose a category:</label>
-            <select id="category">
-              <option selected>All</option>
-              <option>0050_水産・農林業</option>
-              <option>1050_鉱業</option>
-              <option>2050_建設業</option>
-              <option>3050_食料品</option>
-              <option>3100_繊維製品</option>
-              <option>3150_パルプ・紙</option>
-              <option>3200_化学</option>
-              <option>3250_医薬品</option>
-              <option>3300_石油・石炭製品</option>
-              <option>3350_ゴム製品</option>
-              <option>3400_ガラス・土石製品</option>
-              <option>3450_鉄鋼</option>
-              <option>3500_非鉄金属</option>
-              <option>3550_金属製品</option>
-              <option>3600_機械</option>
-              <option>3650_電気機器</option>
-              <option>3700_輸送用機器</option>
-              <option>3750_精密機器</option>
-              <option>3800_その他製品</option>
-              <option>4050_電気・ガス業</option>
-              <option>5050_陸運業</option>
-              <option>5100_海運業</option>
-              <option>5150_空運業</option>
-              <option>5200_倉庫・運輸関連業</option>
-              <option>5250_情報・通信業</option>
-              <option>6050_卸売業</option>
-              <option>6100_小売業</option>
-              <option>7050_銀行業</option>
-              <option>7100_証券、商品先物取引業</option>
-              <option>7150_保険業</option>
-              <option>7200_その他金融業</option>
-              <option>8050_不動産業</option>
-              <option>9050_サービス業</option>
-              <option>9999_未定義</option>              
-            </select>
-          </div>
-          <div class="textsearch">
-            <label for="searchTerm">Enter search term:</label>
-            <input type="text" id="searchTerm" placeholder="e.g. サカタのタネ">
-          </div>
-          <div>
-            <button><img src="icons/outline_search_white_24dp.png"  alt="filter" width="24" height="24">Filter</button>
-          </div>
-        </form>
-      </aside>
-      <main>
-
-      </main>
     </div>
-    <footer>
-      <p>このコンテンツは、<a href="https://mdn.github.io/learning-area/javascript/apis/fetching-data/can-store/" target="_blank" rel="noopener noreferrer">MDN learning-area,"The Can Store"</a>を参考に作成しました。</p>
-      <p>アイコンは、<a href="https://fonts.google.com/icons" target="_blank">Google Font</a>を利用してます。</p>
-    </footer>
-    <p>Copyright c 2021 sg.tao.so@gmail.com All Rights Reserved.</p>
-  </div>  
-  <script src="scripts/company-script.js"></script>
-  <script>
-    // use fetch to retrieve the companies and pass them to init
-    // report any errors that occur in the fetch operation
-    // once the products have been successfully loaded and formatted as a JSON object
-    // using response.json(), run the initialize() function
-    fetch('./assets/NikkeiDIGITAL_list.json').then(function (response) {
-      return response.json();
-    }).then(function (companies) {
-      initialize(companies);
-    }).catch(function (err) {
-      console.log('Fetch problem: ' + err.message);
-    });
-  </script>
-  <!-- scroll up button -->
-  <div id="page_top"><p>▲Top</p></div>      
-  <script src="./scripts/vendors/anime.min.js"></script>
-  <script src="scripts/libs/page-top.js"></script>
-  <script>
-    const btn_page_top = document.querySelector('#page_top');
-    init_page_top(btn_page_top);
-  </script>
+    <div id="container" class="filter">
+      <header>
+        <h1>日経DIGITALリンク(地域別)</h1>
+        <p>テスト中です。都道府県毎の本社所在地をもとに企業情報を表示します。</p>
+        <p style="color: red" style="font-weight: bold">
+          （業界と地域名を選択して、絞込み(Filter)をクリックして、ご参照ください）
+        </p>
+      </header>
+      <div>
+        <aside>
+          <form>
+            <div class="category">
+              <label for="category">Choose a category:</label>
+              <select id="category">
+                <option selected>All</option>
+                <option>0050_水産・農林業</option>
+                <option>1050_鉱業</option>
+                <option>2050_建設業</option>
+                <option>3050_食料品</option>
+                <option>3100_繊維製品</option>
+                <option>3150_パルプ・紙</option>
+                <option>3200_化学</option>
+                <option>3250_医薬品</option>
+                <option>3300_石油・石炭製品</option>
+                <option>3350_ゴム製品</option>
+                <option>3400_ガラス・土石製品</option>
+                <option>3450_鉄鋼</option>
+                <option>3500_非鉄金属</option>
+                <option>3550_金属製品</option>
+                <option>3600_機械</option>
+                <option>3650_電気機器</option>
+                <option>3700_輸送用機器</option>
+                <option>3750_精密機器</option>
+                <option>3800_その他製品</option>
+                <option>4050_電気・ガス業</option>
+                <option>5050_陸運業</option>
+                <option>5100_海運業</option>
+                <option>5150_空運業</option>
+                <option>5200_倉庫・運輸関連業</option>
+                <option>5250_情報・通信業</option>
+                <option>6050_卸売業</option>
+                <option>6100_小売業</option>
+                <option>7050_銀行業</option>
+                <option>7100_証券、商品先物取引業</option>
+                <option>7150_保険業</option>
+                <option>7200_その他金融業</option>
+                <option>8050_不動産業</option>
+                <option>9050_サービス業</option>
+                <option>9999_未定義</option>
+              </select>
+            </div>
+            <div class="area_buttons">
+              <ul class="l-area_list">
+                <li class="l-areaItem">北海道</li>
+                  <ul class="l-areaItem-inline">
+                    <li class="l-areaItem-inline__item">北海道</li>
+                  </ul>
+                <li class="l-areaItem">東北</li>
+                  <ul class="l-areaItem-inline">
+                    <li class="l-areaItem-inline__item">青森県</li>
+                    <li class="l-areaItem-inline__item">岩手県</li>
+                    <li class="l-areaItem-inline__item">宮城県</li>
+                    <li class="l-areaItem-inline__item">秋田県</li>
+                    <li class="l-areaItem-inline__item">山形県</li>
+                    <li class="l-areaItem-inline__item">福島県</li>
+                  </ul>
+                <li class="l-areaItem">関東</li>
+                  <ul class="l-areaItem-inline">
+                    <li class="l-areaItem-inline__item">茨城県</li>
+                    <li class="l-areaItem-inline__item">栃木県</li>
+                    <li class="l-areaItem-inline__item">群馬県</li>
+                    <li class="l-areaItem-inline__item">埼玉県</li>
+                    <li class="l-areaItem-inline__item">千葉県</li>
+                    <li class="l-areaItem-inline__item">東京都</li>
+                    <li class="l-areaItem-inline__item">神奈川県</li>
+                  </ul>
+                <li class="l-areaItem">信越</li>
+                  <ul class="l-areaItem-inline">
+                    <li class="l-areaItem-inline__item">新潟県</li>
+                    <li class="l-areaItem-inline__item">長野県</li>
+                  </ul>
+                <li class="l-areaItem">北陸</li>
+                  <ul class="l-areaItem-inline">
+                    <li class="l-areaItem-inline__item">富山県</li>
+                    <li class="l-areaItem-inline__item">石川県</li>
+                    <li class="l-areaItem-inline__item">福井県</li>
+                  </ul>
+                <li class="l-areaItem">中部</li>
+                  <ul class="l-areaItem-inline">
+                    <li class="l-areaItem-inline__item">山梨県</li>
+                    <li class="l-areaItem-inline__item">岐阜県</li>
+                    <li class="l-areaItem-inline__item">静岡県</li>
+                    <li class="l-areaItem-inline__item">愛知県</li>
+                  </ul>
+                <li class="l-areaItem">関西</li>
+                  <ul class="l-areaItem-inline">
+                    <li class="l-areaItem-inline__item">三重県</li>
+                    <li class="l-areaItem-inline__item">滋賀県</li>
+                    <li class="l-areaItem-inline__item">京都府</li>
+                    <li class="l-areaItem-inline__item">大阪府</li>
+                    <li class="l-areaItem-inline__item">兵庫県</li>
+                    <li class="l-areaItem-inline__item">奈良県</li>
+                    <li class="l-areaItem-inline__item">和歌山県</li>
+                  </ul>
+                <li class="l-areaItem">中国</li>
+                  <ul class="l-areaItem-inline">
+                    <li class="l-areaItem-inline__item">鳥取県</li>
+                    <li class="l-areaItem-inline__item">島根県</li>
+                    <li class="l-areaItem-inline__item">岡山県</li>
+                    <li class="l-areaItem-inline__item">広島県</li>
+                    <li class="l-areaItem-inline__item">山口県</li>
+                  </ul>
+                <li class="l-areaItem">四国</li>
+                  <ul class="l-areaItem-inline">
+                    <li class="l-areaItem-inline__item">徳島県</li>
+                    <li class="l-areaItem-inline__item">香川県</li>
+                    <li class="l-areaItem-inline__item">愛媛県</li>
+                    <li class="l-areaItem-inline__item">高知県</li>
+                  </ul>
+                <li class="l-areaItem">九州・沖縄</li>
+                  <ul class="l-areaItem-inline">
+                    <li class="l-areaItem-inline__item">福岡県</li>
+                    <li class="l-areaItem-inline__item">佐賀県</li>
+                    <li class="l-areaItem-inline__item">長崎県</li>
+                    <li class="l-areaItem-inline__item">熊本県</li>
+                    <li class="l-areaItem-inline__item">大分県</li>
+                    <li class="l-areaItem-inline__item">宮崎県</li>
+                    <li class="l-areaItem-inline__item">鹿児島県</li>
+                    <li class="l-areaItem-inline__item">沖縄県</li>
+                  </ul>
 
-</body>
+              </ul>
+            </div>
+            <div class="textsearch" style="display:none">
+              <label for="searchTerm">Enter search term:</label>
+              <input type="text" id="searchTerm" placeholder="e.g. サカタのタネ">
+            </div>
+            <div>
+              <button><img src="icons/outline_search_white_24dp.png"  alt="filter" width="24" height="24">Filter</button>
+            </div>
+          </form>
+        </aside>
+        <main></main>
+      </div>
+      <footer>
+        <p>
+          このコンテンツは、<a
+            href="https://mdn.github.io/learning-area/javascript/apis/fetching-data/can-store/"
+            target="_blank"
+            rel="noopener noreferrer"
+            >MDN learning-area,"The Can Store"</a
+          >を参考に作成しました。
+        </p>
+        <p>
+          アイコンは、<a href="https://fonts.google.com/icons" target="_blank"
+            >Google Font</a
+          >を利用してます。
+        </p>
+      </footer>
+      <p>Copyright c 2021 sg.tao.so@gmail.com All Rights Reserved.</p>
+    </div>
+    <script src="scripts/company-script.js"></script>
+    <script>
+      // use fetch to retrieve the companies and pass them to init
+      // report any errors that occur in the fetch operation
+      // once the products have been successfully loaded and formatted as a JSON object
+      // using response.json(), run the initialize() function
+      fetch("./assets/NikkeiDIGITAL_list.json")
+        .then(function (response) {
+          return response.json();
+        })
+        .then(function (companies) {
+          initialize(companies, false); // pref_active is false
+        })
+        .catch(function (err) {
+          console.log("Fetch problem: " + err.message);
+        });
+    </script>
+    <!-- scroll up button -->
+    <div id="page_top"><p>▲Top</p></div>
+    <script src="./scripts/vendors/anime.min.js"></script>
+    <script src="scripts/libs/page-top.js"></script>
+    <script>
+      const btn_page_top = document.querySelector("#page_top");
+      init_page_top(btn_page_top);
+    </script>
+  </body>
 </html>

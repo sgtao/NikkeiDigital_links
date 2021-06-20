@@ -1,12 +1,13 @@
 'use strict';
 
 // sets up the app logic, declares required variables, contains all the other functions
-function initialize(companys) {
+function initialize(companys, pref_active=true) {
   // grab the UI elements that we need to manipulate
   const category = document.querySelector('#category');
   const searchTerm = document.querySelector('#searchTerm');
   const searchBtn = document.querySelector('button');
   const main = document.querySelector('main');
+  const pref_buttons = document.querySelectorAll('.l-areaItem-inline__item');
 
   // keep a record of what the last category and search term entered were
   let lastCategory = category.value;
@@ -26,6 +27,9 @@ function initialize(companys) {
 
   // set prefecture category
   let pref_category = set_prefecture();
+  if (pref_active === false) {
+    inactive_prefecture();
+  }
 
   // To start with, set finalGroup to equal the entire companys database
   // then run updateDisplay(), so ALL companys are displayed initially.
@@ -280,7 +284,27 @@ function initialize(companys) {
     area_category.push({ name: '宮崎県', activity: true });
     area_category.push({ name: '鹿児島県', activity: true });
     area_category.push({ name: '沖縄県', activity: true });
-    console.log(area_category);
+    // console.log(area_category);
     return area_category;
   }
+  function inactive_prefecture() {
+    pref_category.forEach(pref => {
+      pref.activity = false;
+    });
+  }
+  // area button listener
+  pref_buttons.forEach(pref_btn => {
+    pref_btn.addEventListener('click', function(){
+      this.classList.toggle('active');
+      if (this.classList.contains('active') === true) {
+        pref_category.filter(pref => pref.name == this.textContent)[0].activity = true;
+        // pref_category.filter(this.textContentpref => pref.name == company.head_prefecture).forEach(pref => {
+        //   pref.activity = true;
+        // });
+      } else {
+        pref_category.filter(pref => pref.name == this.textContent)[0].activity = false;
+      }
+      console.log(pref_category.filter(pref => pref.name == this.textContent));
+    });
+  })
 }

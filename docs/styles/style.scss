@@ -115,7 +115,7 @@ html, body {
 }
 
 
-// filter page styles
+// filter / region  page styles
 .filter {
 	/* block styling */
 	header, aside, main, footer {
@@ -142,6 +142,33 @@ html, body {
 		// .category { 
 		// 	display: none;
 		// }
+
+		.area_buttons {
+			.l-areaItem {
+				list-style: none;
+				font-weight: bolder;
+			}
+			.l-areaItem-inline {
+				display: flex;
+				flex-wrap: wrap;
+			}
+			.l-areaItem-inline__item {
+				width: 80px;
+				list-style: none;
+				border: 1px solid black;
+				background-color: white;
+				text-align: center;
+				&:hover {
+					cursor: pointer;
+					margin-top: -3px;
+					border-bottom: 3px solid darkorange;
+				}
+				&.active {
+					background-color: #333;
+					color: white;
+				}
+			}
+		}
   }
 	input {
 		background: white;
