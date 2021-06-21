@@ -41,9 +41,6 @@ function initialize(companys, pref_active=true) {
   selectcompanys();
 
 
-  // 
-  // selectcompanys();
-  
   // when the search button is clicked, invoke selectCategory() to start
   // a search running to select the category of companys we want to display
   // searchBtn.onclick = selectCategory;
@@ -57,6 +54,8 @@ function initialize(companys, pref_active=true) {
     // Set these back to empty arrays, to clear out the previous search
     categoryGroup = [];
     finalGroup = [];
+    // filter companies by category at initial
+    filter_category(category.value);
 
     // if the category and search term are the same as they were the last time a
     // search was run, the results will be the same, so there is no point running
@@ -102,6 +101,16 @@ function initialize(companys, pref_active=true) {
         if (companys[i].category_with_code === category_value) {
           categoryGroup.push(companys[i]);
         }
+      }
+    }
+    // area filter
+    let _copy_Group = categoryGroup.slice();
+    categoryGroup = [];
+    for (let i = 0; i < _copy_Group.length; i++) {
+      let _prefecture = pref_category.filter(pref => pref.name == _copy_Group[i].head_prefecture)
+      if (_prefecture[0].activity === true) {
+        console.log(_copy_Group[i].name + ' at ' + _copy_Group[i].head_prefecture);
+        categoryGroup.push(_copy_Group[i]);
       }
     }
   }
@@ -164,12 +173,6 @@ function initialize(companys, pref_active=true) {
 
   // Display a company inside the <main> element
   function showcompany(url, company) {
-    // check pref. category 
-    let _prefecture = pref_category.filter(pref => pref.name == company.head_prefecture)
-    if (_prefecture[0].activity === false) {
-      return;
-    }
-
     // create <section>, <h2>, <p>, and <img> elements
     const section = document.createElement('section');
     const heading = document.createElement('h2');
