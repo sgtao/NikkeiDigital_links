@@ -169,18 +169,27 @@ html, body {
 				}
 			}
 		}
-		.area_filter {
+		.region_btn {
 			background: black;
 			color: white;
 			text-align: center;
 			padding: 5px;
 			border-radius: 10px;
 			position: fixed;
-			left: 30px;
-			bottom: 50px;
 			opacity: 0.6;
 			&:hover {
 				opacity: 1;
+			}
+		}
+		.area_fileter {
+			left: 30px;
+			bottom: 64px;
+		}
+		.filter_result {
+			left: 30px;
+			bottom: 24px;
+			a {
+				color: white;
 			}
 		}
   }
