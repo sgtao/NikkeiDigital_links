@@ -62,6 +62,8 @@ function initialize(companys, pref_active=true) {
     // search was run, the results will be the same, so there is no point running
     // it again — just return out of the function
     if (category.value === lastCategory && searchTerm.value.trim() === lastSearch) {
+      // Run selectcompanys() after the filtering has been done
+      selectcompanys();
       return;
     } else {
       console.log('change category');
