@@ -4,16 +4,41 @@
 // style for side-menu
 @import "modules/side-menu";
 
+// index.html styles
 html, body {
 	margin:0 auto;
 	height: 100vh;
 }
+// loader style
+.pace {
+	margin:0 auto;
+	height: 80%;
+	width: 80%;
+	top: 30vh;
+	&::after {
+		content: 'NikkeiDigital_links';
+		font-size: 24px;
+		position: absolute;
+		color:rgb(1, 182, 1);
+		z-index: 10;
+		top: 60px;
+		left: 40px;
+	}
+}
+.pace-running {
+	#global-container {
+		opacity: 0;
+	}
+}
+.pace-done #global-container {
+	transition: opacity 3s;
+	opacity: 1;
+}
+// body styles
 #container {
 	margin: 0 auto;
 	width: 80%;
 }
-
-// index.html styles
 #dropzone {
 	background-color: #cfc;
 	border: solid 3px #9c9;

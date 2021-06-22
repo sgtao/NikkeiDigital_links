@@ -5,36 +5,43 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>NikkeiDigital_links</title>
+  <!-- show loader by pace.js (https://codebyzach.github.io/pace/) -->
+  <!-- refer from https://gimmicklog.com/javascript/614/ -->
+  <link rel="stylesheet" href="styles/vendors/loading-bar.css">
+  <script src="scripts/vendors/pace.min.js"></script>
+  <!-- end of loader -->
   <link rel="stylesheet" href="styles/vendors/bootstrap-reboot.css">
   <link rel="stylesheet" href="styles/style.css">
 </head>
 <body>
-  <div class="menu">
-      <div class="title"><img src="icons/outline_menu_white_24dp.png" alt=""></div>
-      <ul class="nav">
-        <li class="nav_title">MENU</li>
-        <li><a href="./index.html"><img src="icons/outline_home_white_24dp.png" alt="">Home</a></li>
-        <li><a href="./region.html"><img src="icons/map-japan-icon.png" alt="">地域別</a></li>
-        <li><a href="./filter.html"><img src="icons/outline_search_white_24dp.png" alt="">絞込み</a></li>
-      </ul>
+  <div id="global-container">
+    <div class="menu">
+        <div class="title"><img src="icons/outline_menu_white_24dp.png" alt=""></div>
+        <ul class="nav">
+          <li class="nav_title">MENU</li>
+          <li><a href="./index.html"><img src="icons/outline_home_white_24dp.png" alt="">Home</a></li>
+          <li><a href="./region.html"><img src="icons/map-japan-icon.png" alt="">地域別</a></li>
+          <li><a href="./filter.html"><img src="icons/outline_search_white_24dp.png" alt="">絞込み</a></li>
+        </ul>
+    </div>
+    <div id="container">
+      <h1>日経DIGITALリンク</h1>
+      <div>日本経済新聞社『<a href="https://www.nikkei.com/nkd/" target="_blank">日経会社情報DIGITAL</a>』で公開されている東証上場会社の情報について、それぞれの会社情報サイトへのリンクを示します。<b style="color:red">（各業種名（33業種区分）から銘柄をお選びください。また、右側メニューより絞込みも行えます） </b>
+      </div>
+      <div>（記事内容を参照する際は、<a href="https://www.nikkei.com/r123/" target="_blank">日経電子版(有償)</a>へご登録ください。）</div>
+      <hr>
+      <div id="links">
+        <p>リンク一覧：</p>
+      </div>
+      <hr>
+      <div>
+        このコンテンツは、『<a href="https://sgtao.github.io/csv2link_items/" target="_blank">csv2link_items</a>』のエンジンを使い下のテキストから生成しています。
+      </div>
+      <div id="txtarea"></div>
+      <hr>
+      <p>Copyright c 2021 sg.tao.so@gmail.com All Rights Reserved.</p>
+    </div>
   </div>
-  <div id="container">
-    <h1>日経DIGITALリンク</h1>
-    <div>日本経済新聞社『<a href="https://www.nikkei.com/nkd/" target="_blank">日経会社情報DIGITAL</a>』で公開されている東証上場会社の情報について、それぞれの会社情報サイトへのリンクを示します。<b style="color:red">（各業種名（33業種区分）から銘柄をお選びください。また、右側メニューより絞込みも行えます） </b>
-    </div>
-    <div>（記事内容を参照する際は、<a href="https://www.nikkei.com/r123/" target="_blank">日経電子版(有償)</a>へご登録ください。）</div>
-    <hr>
-    <div id="links">
-      <p>リンク一覧：</p>
-    </div>
-    <hr>
-    <div>
-      このコンテンツは、『<a href="https://sgtao.github.io/csv2link_items/" target="_blank">csv2link_items</a>』のエンジンを使い下のテキストから生成しています。
-    </div>
-    <div id="txtarea"></div>
-    <hr>
-    <p>Copyright c 2021 sg.tao.so@gmail.com All Rights Reserved.</p>
-</div>
   <!-- <table id="show_table"></table> -->
   <script src="scripts/vendors/encoding.js"></script>
   <script src="scripts/main.js"></script>
