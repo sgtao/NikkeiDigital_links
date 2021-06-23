@@ -223,6 +223,23 @@ html, body {
     grid-row: 1;
     padding: 10px;
     background: lightgreen; }
+    .filter aside .area_buttons .l-all_buttons {
+      display: flex;
+      justifycontent: flex-start; }
+      .filter aside .area_buttons .l-all_buttons .l-allItem {
+        list-style: none;
+        font-weight: bolder;
+        width: 80px;
+        margin-right: 10px;
+        list-style: none;
+        border: 1px solid black;
+        border-radius: 5px;
+        background-color: white;
+        text-align: center; }
+        .filter aside .area_buttons .l-all_buttons .l-allItem:hover {
+          cursor: pointer;
+          margin-top: -5px;
+          border-bottom: 5px solid red; }
     .filter aside .area_buttons .l-areaItem {
       list-style: none;
       font-weight: bolder; }

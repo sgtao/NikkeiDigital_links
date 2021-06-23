@@ -167,8 +167,27 @@ html, body {
 		// .category { 
 		// 	display: none;
 		// }
-
 		.area_buttons {
+			.l-all_buttons {
+				display: flex;
+				justifycontent: flex-start;
+				.l-allItem {
+					list-style: none;
+					font-weight: bolder;
+					width: 80px;
+					margin-right: 10px;
+					list-style: none;
+					border: 1px solid black;
+					border-radius: 5px;
+					background-color: white;
+					text-align: center;
+					&:hover {
+						cursor: pointer;
+						margin-top: -5px;
+						border-bottom: 5px solid red;
+					}
+				}
+			}
 			.l-areaItem {
 				list-style: none;
 				font-weight: bolder;

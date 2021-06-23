@@ -8,6 +8,8 @@ function initialize(companys, pref_active=true) {
   const searchBtn = document.querySelector('button');
   const main = document.querySelector('main');
   const pref_buttons = document.querySelectorAll('.l-areaItem-inline__item');
+  const allset_buttons = document.querySelector('.AllSet');
+  const allrst_buttons = document.querySelector('.AllRst');
 
   // keep a record of what the last category and search term entered were
   let lastCategory = category.value;
@@ -239,6 +241,7 @@ function initialize(companys, pref_active=true) {
     section.appendChild(para_suppliments);
   }
 
+//    
   function set_prefecture () {
     // let area_category = [{ name : null , active : false }];
     let area_category = new Array({ name: '--', activity: true });
@@ -298,6 +301,22 @@ function initialize(companys, pref_active=true) {
     });
   }
   // area button listener
+  allset_buttons.addEventListener('click', function() {
+    pref_buttons.forEach(pref_btn => {
+      pref_btn.classList.add('active');
+    });
+    pref_category.filter(pref => pref.name != '--').forEach(pref => {
+      pref.activity = true;
+    });
+  });
+  allrst_buttons.addEventListener('click', function() {
+    pref_buttons.forEach(pref_btn => {
+      pref_btn.classList.remove('active');
+    });
+    pref_category.filter(pref => pref.name != '--').forEach(pref => {
+      pref.activity = false;
+    });
+  });
   pref_buttons.forEach(pref_btn => {
     pref_btn.addEventListener('click', function(){
       this.classList.toggle('active');
