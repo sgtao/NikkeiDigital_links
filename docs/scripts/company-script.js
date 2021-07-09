@@ -179,6 +179,7 @@ function initialize(companys, pref_active=true) {
     const section = document.createElement('section');
     const heading = document.createElement('h2');
     const para_cate = document.createElement('p');
+    const para_name = document.createElement('p');
     const para_pref = document.createElement('p');
     const link = document.createElement('a');
     // const image = document.createElement('img');
@@ -196,6 +197,8 @@ function initialize(companys, pref_active=true) {
     // Give the <p> textContent equal to the company "category"
     para_cate.textContent = company.tosyo_category + '：' + company.category;
     para_cate.setAttribute('class', 'category');
+    para_name.textContent = '正式名称：' + company.seisiki_name;
+    para_name.setAttribute('class', 'prefecture');
     para_pref.textContent = '本社：' + company.head_prefecture;
     para_pref.setAttribute('class', 'prefecture');
     // append supplements of paragraph
@@ -237,6 +240,7 @@ function initialize(companys, pref_active=true) {
     main.appendChild(section);
     section.appendChild(heading);
     section.appendChild(para_cate);
+    section.appendChild(para_name);
     section.appendChild(para_pref);
     section.appendChild(para_suppliments);
   }
