@@ -1,4 +1,4 @@
-# nkd-link-app
+# vue.js-lecture
 
 ## Project setup
 ```
