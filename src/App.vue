@@ -6,7 +6,7 @@
       dark
     >
       <v-app-bar-nav-icon @click.stop="toggleSideMenu"></v-app-bar-nav-icon>
-      <v-toolbar-title>マイアドレス帳</v-toolbar-title>
+      <v-toolbar-title>日経DIGITALリンク</v-toolbar-title>
       <v-spacer></v-spacer>
     </v-app-bar>
     <SideNav/>
