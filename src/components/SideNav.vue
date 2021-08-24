@@ -28,7 +28,7 @@ export default {
       // icon の参照情報は、"https://pictogrammers.github.io/@mdi/font/2.0.46/"を参照して選択
       items: [
         { title: 'ホーム', icon: 'mdi-home', link: { name: 'home'} },
-        { title: '企業一覧', icon: 'mdi-menu', link: { name: 'addresses' } },
+        { title: '上場企業一覧', icon: 'mdi-menu', link: { name: 'companylist' } },
         { title: 'about', icon: 'mdi-information', link: { name: 'about'} },
       ]
     }

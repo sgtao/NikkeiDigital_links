@@ -2,7 +2,7 @@
   <v-container text-xs-center justify-center>
     <v-layout row wrap>
       <v-flex xs12>
-        <h1>連絡先一覧</h1>
+        <h1>上場企業一覧</h1>
       </v-flex>
 
       <v-flex xs12 mt-5 justify-center>
@@ -22,6 +22,8 @@
 <script>
 export default {
   data () {
+
+
     return {
       headers: [
         { text: '名前', value: 'name' },
