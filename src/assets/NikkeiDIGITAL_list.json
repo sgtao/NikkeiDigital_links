@@ -1,0 +1,32 @@
+[
+  {
+    "code": 1301,
+    "category": "食品製造",
+    "name": "極洋",
+    "seisiki_name": "（株）極洋",
+    "tosyo_category": "水産・農林業",
+    "start_day": "1937年9月3日",
+    "start_FY": "1937年度",
+    "company_url": "http://www.kyokuyo.co.jp/",
+    "post_code": "〒107-0052",
+    "address": "東京都港区赤坂３－３－５住友生命山王ビル",
+    "head_prefecture": "東京都",
+    "category_with_code": "0050_水産・農林業",
+    "stock_market": "東証１部"
+  },
+  {
+    "code": 1352,
+    "category": "食品卸",
+    "name": "ホウスイ",
+    "seisiki_name": "（株）ホウスイ",
+    "tosyo_category": "卸売業",
+    "start_day": "1945年8月4日",
+    "start_FY": "1945年度",
+    "company_url": "http://www.hohsui.co.jp/",
+    "post_code": "〒135-0061",
+    "address": "東京都江東区豊洲６－６－３",
+    "head_prefecture": "東京都",
+    "category_with_code": "6050_卸売業",
+    "stock_market": "東証１部"
+  },
+]

@@ -11,11 +11,11 @@
     </v-app-bar>
     <SideNav/>
 
-    <v-content>
+    <v-main>
       <v-container fluid fill-height align-start>
         <router-view/>
       </v-container>
-    </v-content>
+    </v-main>
   </v-app>
 </template>
 
