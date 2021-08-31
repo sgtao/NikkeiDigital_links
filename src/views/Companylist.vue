@@ -20,10 +20,40 @@
 </template>
 
 <script>
+import CompanylistJSON from '../assets/NikkeiDIGITAL_list.json';
 export default {
+  created () {
+    // Simple GET request using fetch
+    // refer : https://jasonwatmore.com/post/2020/04/30/vue-fetch-http-get-request-examples
+    //
+    // let filepath = "./assets/NikkeiDIGITAL_list.json";
+    // let filepath = "https://1drv.ms/u/s!AuGcuLVRqyitxRdIb2wG96NVIdje?e=FPpGfT";
+    // let filepath = "http://192.168.10.9/webtest/homenet_html/links/study_mock/12_projects/assets/NikkeiDIGITAL_list.json";
+    let filepath = "https://api.npms.io/v2/search?q=vue";
+    // await fetch("https://api.npms.io/v2/search?q=vue")
+    // const headers = { "Content-Type": "application/json" };
+    // fetch(filepath, {headers})
+    fetch(filepath)
+    .then(async response => {
+      const data = await response.json();
+      console.log(CompanylistJSON);
+
+      // check for error response
+      if (!response.ok) {
+        // get error message from body or default to response statusText
+        const error = (data && data.message) || response.statusText;
+        return Promise.reject(error);
+      }
+
+      this.totalList = data.total;
+      console.log(this.totalLists);
+    })
+    .catch(error => {
+      this.errorMessage = error;
+      console.error("There was an error!", error);
+    });
+  },
   data () {
-
-
     return {
       headers: [
         { text: '名前', value: 'name' },
@@ -44,7 +74,8 @@ export default {
           email: 'sample2@mail.com',
           address: '東京都品川区'
         }
-      ]
+      ],
+      Companylist: CompanylistJSON
     }
   }
 }
