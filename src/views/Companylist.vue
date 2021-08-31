@@ -6,12 +6,13 @@
       </v-flex>
 
       <v-flex xs12 mt-5 justify-center>
-        <v-data-table :headers='headers' :items='addresses'>
+        <v-data-table :headers='headers' :items='Companylist'>
           <template v-slot:items="props">
-            <td class="text-xs-left">{{ props.item.name }}</td>
-            <td class="text-xs-left">{{ props.item.tel }}</td>
-            <td class="text-xs-left">{{ props.item.email }}</td>
-            <td class="text-xs-left">{{ props.item.address }}</td>
+            <td class="text-xs-left">{{ props.item.seisiki_name }}</td>
+            <td class="text-xs-left">{{ props.item.category }}</td>
+            <td class="text-xs-left">{{ props.item.stock_market }}</td>
+            <td class="text-xs-left">{{ props.item.head_prefecture }}</td>
+            <td class="text-xs-left">{{ props.item.company_url }}</td>
           </template>
         </v-data-table>
       </v-flex>
@@ -20,62 +21,21 @@
 </template>
 
 <script>
-import CompanylistJSON from '../assets/NikkeiDIGITAL_list.json';
+import loadfile from '../assets/NikkeiDIGITAL_list.json';
 export default {
   created () {
-    // Simple GET request using fetch
-    // refer : https://jasonwatmore.com/post/2020/04/30/vue-fetch-http-get-request-examples
-    //
-    // let filepath = "./assets/NikkeiDIGITAL_list.json";
-    // let filepath = "https://1drv.ms/u/s!AuGcuLVRqyitxRdIb2wG96NVIdje?e=FPpGfT";
-    // let filepath = "http://192.168.10.9/webtest/homenet_html/links/study_mock/12_projects/assets/NikkeiDIGITAL_list.json";
-    let filepath = "https://api.npms.io/v2/search?q=vue";
-    // await fetch("https://api.npms.io/v2/search?q=vue")
-    // const headers = { "Content-Type": "application/json" };
-    // fetch(filepath, {headers})
-    fetch(filepath)
-    .then(async response => {
-      const data = await response.json();
-      console.log(CompanylistJSON);
-
-      // check for error response
-      if (!response.ok) {
-        // get error message from body or default to response statusText
-        const error = (data && data.message) || response.statusText;
-        return Promise.reject(error);
-      }
-
-      this.totalList = data.total;
-      console.log(this.totalLists);
-    })
-    .catch(error => {
-      this.errorMessage = error;
-      console.error("There was an error!", error);
-    });
+    // console.dir(loadfile.Companylist);
   },
   data () {
     return {
       headers: [
-        { text: '名前', value: 'name' },
-        { text: '電話番号', value: 'tel' },
-        { text: 'メールアドレス', value: 'email' },
-        { text: '住所', value: 'address' }
+        { text: '名前', value: 'seisiki_name' },
+        { text: 'カテゴリ', value: 'category' },
+        { text: '上場市場', value: 'stock_market' },
+        { text: '本社所在地', value: 'head_prefecture' },
+        { text: 'ウェブサイト', value: 'company_url' }
       ],
-      addresses: [
-        {
-          name: '友人１',
-          tel: '090-0000-1111',
-          email: 'sample1@mail.com',
-          address: '東京都渋谷区'
-        },
-        {
-          name: '友人２',
-          tel: '090-2222-3333',
-          email: 'sample2@mail.com',
-          address: '東京都品川区'
-        }
-      ],
-      Companylist: CompanylistJSON
+      Companylist: loadfile.Companylist.list
     }
   }
 }
