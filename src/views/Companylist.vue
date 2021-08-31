@@ -24,13 +24,13 @@
 import loadfile from '../assets/NikkeiDIGITAL_list.json';
 export default {
   created () {
-    // console.dir(loadfile.list);
+    console.dir(loadfile.list);
   },
   data () {
     return {
       headers: [
         { text: 'コード', value: 'code' },
-        { text: '正式名称', value: 'seisiki_name' },
+        { text: '会社名', value: 'seisiki_name' },
         { text: 'カテゴリ', value: 'category' },
         { text: '上場市場', value: 'stock_market' },
         { text: '本社所在地', value: 'head_prefecture' },

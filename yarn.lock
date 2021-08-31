@@ -1899,6 +1899,11 @@
   dependencies:
     "@babel/helper-define-polyfill-provider" "^0.2.2"
 
+"babel-plugin-transform-remove-console@^6.9.4":
+  "integrity" "sha1-uYA2DAZzhOJLNXpYjYB9PINSd4A="
+  "resolved" "https://registry.npmjs.org/babel-plugin-transform-remove-console/-/babel-plugin-transform-remove-console-6.9.4.tgz"
+  "version" "6.9.4"
+
 "balanced-match@^1.0.0":
   "integrity" "sha512-3oSeUO0TMV67hN1AmbXsK4yaqU7tjiHlbxRDZOpH0KW9+CeX4bRAaX0Anxt0tx2MrpRpWwQaPwIlISEJhYU5Pw=="
   "resolved" "https://registry.npmjs.org/balanced-match/-/balanced-match-1.0.2.tgz"
