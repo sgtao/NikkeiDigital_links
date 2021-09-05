@@ -7,12 +7,11 @@
 
       <v-flex xs12 mt-5 justify-center>
         <v-data-table :headers='headers' :items='Companylist'>
-          <template v-slot:items="props">
-            <td class="text-xs-left">{{ props.item.code }}</td>
-            <td class="text-xs-left">{{ props.item.seisiki_name }}</td>
-            <td class="text-xs-left">{{ props.item.category }}</td>
-            <td class="text-xs-left">{{ props.item.stock_market }}</td>
-            <td class="text-xs-left">{{ props.item.head_prefecture }}</td>
+          // v-slot内でatagを入れる
+          // refer : https://ssrv.net/tech/vue-vuetify-v-data-table-link/
+          <!-- <template v-slot:items="props"> -->
+          <template v-slot:[`item.company_url`]="{item}">
+            <td class="text-xs-left"><a :href="item.company_url" target="_blank">  {{item.company_url }}</a></td>
           </template>
         </v-data-table>
       </v-flex>
@@ -34,6 +33,7 @@ export default {
         { text: 'カテゴリ', value: 'category' },
         { text: '上場市場', value: 'stock_market' },
         { text: '本社所在地', value: 'head_prefecture' },
+        { text: '会社サイト', value: 'company_url' },
       ],
       Companylist: loadfile.list
     }
