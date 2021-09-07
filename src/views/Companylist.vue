@@ -10,8 +10,11 @@
           // v-slot内でatagを入れる
           // refer : https://ssrv.net/tech/vue-vuetify-v-data-table-link/
           <!-- <template v-slot:items="props"> -->
-          <template v-slot:[`item.company_url`]="{item}">
-            <td class="text-xs-left"><a :href="item.company_url" target="_blank">  {{item.company_url }}</a></td>
+          <template v-slot:[`item.seisiki_name`]="{item}" >
+            <td class="text-xs-left"><a :href="item.company_url" target="_blank">  {{item.seisiki_name }}</a></td>
+          </template>
+          <template v-slot:[`item.name`]="{item}">
+            <td class="text-xs-left"><a :href="'https://www.nikkei.com/nkd/company/gaiyo/?scode=' + item.code" target="_blank">  {{"日経「" + item.name +"」"}}</a></td>
           </template>
         </v-data-table>
       </v-flex>
@@ -33,7 +36,8 @@ export default {
         { text: 'カテゴリ', value: 'category' },
         { text: '上場市場', value: 'stock_market' },
         { text: '本社所在地', value: 'head_prefecture' },
-        { text: '会社サイト', value: 'company_url' },
+        { text: '会社概要', value: 'name' },
+        // { text: '会社サイト', value: 'company_url' },
       ],
       Companylist: loadfile.list
     }

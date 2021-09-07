@@ -19,6 +19,12 @@
   </v-app>
 </template>
 
+<style lang="scss">
+#app {
+  
+}
+</style>
+
 <script>
 import SideNav from './components/SideNav'
 import { mapActions } from 'vuex'
