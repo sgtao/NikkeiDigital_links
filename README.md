@@ -13,8 +13,7 @@ yarn serve
 
 ### Compiles and minifies for production
 ```
-# yarn build
-npm run build
+yarn build
 ```
 
 ### Lints and fixes files

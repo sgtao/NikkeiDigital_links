@@ -6,7 +6,7 @@
       </v-flex>
 
       <v-flex xs12 mt-5 justify-center>
-        <v-data-table :headers='headers' :items='Companylist'>
+        <v-data-table :headers='headers' :items='Companylist' color="primary" app lighten  class="company_table">
           // v-slot内でatagを入れる
           // refer : https://ssrv.net/tech/vue-vuetify-v-data-table-link/
           <!-- <template v-slot:items="props"> -->
@@ -21,13 +21,46 @@
     </v-layout>
   </v-container>
 </template>
-
+<style lang="scss">
+  // table styling along with refer material color pallet
+  // refer : https://vuetifyjs.com/ja/styles/colors/
+  $color-pack: false;
+  .company_table {
+    width: 90%;
+    margin: 0 auto;
+    background-color: white;
+    table {
+      thead tr {
+        background-color: #8C9EFF;
+        th {
+          border: 1px solid white;
+        }
+      }
+      tbody {
+        tr {
+          border-radius: 25px;
+          border: 0;
+          &:nth-child(2n){
+            background-color: #C8E6C9;
+          }
+          &:hover {
+            background-color: #536DFE;
+          }
+        }
+      }
+    }
+  }
+  .company_table .v-table tbody tr:not(:last-child) {
+    border-bottom: none;
+  }
+</style>
 <script>
 import loadfile from '../assets/NikkeiDIGITAL_list.json';
 export default {
-  created () {
-    console.dir(loadfile.list);
-  },
+  // commented out for build
+  // created () {
+  //   console.dir(loadfile.list);
+  // },
   data () {
     return {
       headers: [
