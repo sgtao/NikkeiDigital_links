@@ -1,0 +1,64 @@
+@charset "UTF-8";
+/* pagetop_styles.css */
+/* refer : https://rfs.jp/sb/javascript/js-lab/brn-backtotop.html */
+#page_top {
+  width: 50px;
+  height: 50px;
+  position: fixed;
+  right: 30px;
+  bottom: 50px;
+  background: #3f98ef;
+  border-radius: 50%;
+  display: block;
+  z-index: 10;
+  opacity: 0; }
+  #page_top :hover {
+    cursor: pointer; }
+
+#page_top p {
+  position: relative;
+  display: block;
+  width: 50px;
+  height: 50px;
+  text-decoration: underline;
+  color: white;
+  top: 10px;
+  /* text-align: center; */
+  margin-block-start: 1em;
+  margin-block-end: 1em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  line-height: 0; }
+
+#page_top.fadein {
+  opacity: 0.6;
+  transition: all .5s; }
+
+#page_top.fadein:hover {
+  opacity: 0.9; }
+
+
+html, body {
+  margin: 0 auto;
+  height: 100vh; }
+
+.pace {
+  margin: 0 auto;
+  height: 80%;
+  width: 80%;
+  top: 30vh; }
+  .pace::after {
+    content: 'NikkeiDigital_links';
+    font-size: 24px;
+    position: absolute;
+    color: #01b601;
+    z-index: 10;
+    top: 60px;
+    left: 40px; }
+
+.pace-running #global-container {
+  opacity: 0; }
+
+.pace-done #global-container {
+  transition: opacity 3s;
+  opacity: 1; }
