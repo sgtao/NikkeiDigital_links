@@ -30,7 +30,7 @@
               <a :href="'https://www.nikkei.com/nkd/company/gaiyo/?scode=' + item.code" target="_blank">  {{"概要"}}</a>、
               <a :href="'https://www.nikkei.com/nkd/company/news/?scode=' + item.code" target="_blank">  {{"news"}}</a>、
               <a :href="'https://www.nikkei.com/nkd/company/kessan/?scode=' + item.code" target="_blank">  {{"業績"}}</a>、
-              <a :href="'https://www.nikkei.com/nkd/company/kigyo/?scode=' + item.code" target="_blank">  {{"発信情報"}}</a>
+              <a :href="'https://www.nikkei.com/nkd/company/kigyo/?scode=' + item.code" target="_blank">  {{"企業発信"}}</a>
             </td>
           </template>
         </v-data-table>
