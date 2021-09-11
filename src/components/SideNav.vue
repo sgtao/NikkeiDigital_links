@@ -29,6 +29,7 @@ export default {
       items: [
         { title: 'ホーム', icon: 'mdi-home', link: { name: 'home'} },
         { title: '上場企業一覧', icon: 'mdi-menu', link: { name: 'companylist' } },
+        { title: '日経Digital絞込', icon: 'mdi-filter', link: { name: 'filterlist' } },
         { title: 'about', icon: 'mdi-information', link: { name: 'about'} },
       ]
     }

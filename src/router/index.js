@@ -2,6 +2,7 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Home from '../views/Home.vue'
 import Companylist from '../views/Companylist.vue'
+import Filterlist from '../views/Filterlist.vue'
 import About from '../views/About.vue'
 
 Vue.use(VueRouter)
@@ -16,6 +17,11 @@ const routes = [
     path: '/companylist',
     name: 'companylist',
     component: Companylist
+  },
+  {
+    path: '/filterlist',
+    name: 'filterlist',
+    component: Filterlist
   },
   {
     path: '/about',
