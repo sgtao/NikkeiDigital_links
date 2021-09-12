@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ja">
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
     <link rel="icon" href="<%= BASE_URL %>favicon.ico">
-    <title>NikkeiDigital_links</title>
+    <title><%= htmlWebpackPlugin.options.title %></title>
     <link rel="stylesheet" href="styles/vendors/bootstrap-reboot.css">
     <link rel="stylesheet" href="styles/vendors/loading-bar.css">
     <script src="scripts/vendors/pace.min.js"></script>
@@ -21,7 +21,15 @@
         <strong>We're sorry but vue.js-lecture doesn't work properly without JavaScript enabled. Please enable it to continue.</strong>
       </noscript>
       <div id="app"></div>
+      <!-- built files will be auto injected -->
+  <!-- scroll up button -->
+  <div id="page_top"><p>▲Top</p></div>      
+  <script src="./scripts/vendors/anime.min.js"></script>
+  <script src="scripts/libs/page-top.js"></script>
+  <script>
+    const btn_page_top = document.querySelector('#page_top');
+    init_page_top(btn_page_top);
+  </script>
     </div>
-    <!-- built files will be auto injected -->
   </body>
 </html>
