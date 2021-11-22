@@ -2,7 +2,7 @@ module.exports = {
   "transpileDependencies": [
     "vuetify"
   ],
-  publicPath: './',
+  publicPath: '/NikkeiDigital_links',
   assetsDir: "",
   outputDir: "docs",
   // add for set title
